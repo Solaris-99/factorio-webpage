@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorio - Mecánicas y entidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree">
+    <link rel="icon" href="imagenes/logo32.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagenes/logo32.png" alt="Logo" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Factorio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#comprar">Comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galería</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Guías
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="empenzando.html">Empezando a jugar</a></li>
+                            <li><a class="dropdown-item" href="mecanicas.html">Mecánicas y entidades</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="empenzando.html#guias-externas">Guías de la comunidad</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="acerca.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nosotros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="acerca.html#acerca-de">Acerca de</a></li>
+                            <li><a class="dropdown-item" href="acerca.html#contacto">Contactanos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <header class="container-fluid panel-contenido w-75">
+        <h1 class="mx-auto">Mecánicas y entidades</h1>
+    </header>
+
+    <main class="container-fluid">
+        <div class="w-100 d-flex justify-content-center mb-n8">
+            <img src="imagenes/logo250.png" alt="logo"  class="logo-fondo" width="250" height ="250">
+        </div>
+        <section class="panel-contenido">
+            <h2>Mecánicas</h2>
+
+            <h3 class="fs-4">Tiempo de crafteo</h3>
+            <p>El tiempo de crafteo puede calcularse de una manera simple, es:</p>
+            <p class="formula">
+                t/v
+            </p>
+            <p>
+                Donde t es el tiempo que tarda en craftearse el item, informado en el inventario,
+                y v es la velocidad de crafteo. Para el jugador, v es normalmente 1, aunque puede incrementarse
+                con el uso de mods.
+            </p>
+            <h3 class="fs-4">
+                Tiempo de investigación
+            </h3>
+            <p>
+                La fórmula para cálcular el tiempo de investigación de cualquier tecnología es:
+            </p>
+            <p class="formula">(t * p) / (l * v)</p>
+            <p>
+                Donde t y p es el tiempo y el precio informados en la sección de tecnología, respectivamente. l son la
+                cantidad de laboratorios y v es la velocidad de estos. Para calcular la velocidad de los
+                laboratorios puedes usar:
+            </p>
+            <p class="formula">(1+ b) * (1+m)</p>
+            <p>Donde b es la cantidad de tecnologías relevantes a la velocidad de los laboratorios y m es el
+                efecto total de los módulos de velocidad
+            </p>
+            <h3 class="fs-4">Daño y resistencias</h3>
+            <p>
+                Hay varios tipos de daños, el más común siendo el físico. Los tipos de daños pueden ser: físico,
+                impacto, fuego, ácido, veneno, explosión, laser y eléctrico
+            </p>
+            <p> Existen dos tipos de resistencia, la resistencia "plana" y la resistencia porcentual.
+                Como sus nombres lo indican, la resistencia plana reduce el daño en un número fijo y la
+                porcentual en un porcentaje. Sus formulas son:
+            </p>
+            <p>Para la resistencia plana, siempre que el daño resultante no sea menor a 1:</p>
+            <p>Sea M el daño modificado, R la resistencia y D el daño original.</p>
+            <p class="formula">M = D - R</p>
+            <p>Si D > 1</p>
+            <p class="formula">M=1/(R-D+2)</p>
+            <p>de otra forma es:</p>
+            <p class="formula">M=1/(R+1)</p>
+            <p>Para la resistencia porcentual la formula es más simple:</p>
+            <p class="formula">F = M * (1-P)</p>
+            <p>
+                Donde F es el daño final, M el daño modificado por la resistencia plana
+                y P la resistencia porcentual.
+            </p>
+        </section>
+        <div class="w-100 d-flex justify-content-center mb-n8">
+            <img src="imagenes/logo250.png" alt="logo"  class="logo-fondo" width="250" height ="250">
+        </div>
+        <section class="panel-contenido">
+            <h2>Entidades</h2>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/ensambladoras.jpg" class="img-fluid rounded-start"
+                            alt="Los 3 niveles de máquinas ensambladoras" width="480" height ="480">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Máquinas ensambladoras</h5>
+                            <p class="card-text">Las máquinas ensambladoras son la fuerza principal de producción de la
+                                fábrica.
+                                Producen componentes como engranajes, circuitos, otras máquinas, etc. Vienen en 3
+                                niveles,
+                                cada
+                                una más rápida que la otra.
+                            </p>
+                            <ul>
+                                <li>Vida: 300, 350, 400</li>
+                                <li>Vel. crafteo: 0.5, 0.75, 1.25</li>
+                                <li>Consumo: 75, 150, 375 kW.</li>
+                                <li>Polución: 4, 3, 2 /m</li>
+                                <li>Espacio para módulos: 0, 2, 4</li>
+                            </ul>
+                            <!-- <div class="position-absolute bottom-3 start-50 translate-middle-x w-75 text-center">
+                                <hr class="mb-0">
+
+                            </div> -->
+
+                        </div>
+                       
+                    </div>
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Assembling_machine_1/es">Máquina ensambladora
+                                1</a>
+                            <a href="https://wiki.factorio.com/Assembling_machine_2/es">Máquina ensambladora
+                                2</a>
+                            <a href="https://wiki.factorio.com/Assembling_machine_3/es">Máquina ensambladora
+                                3</a>
+                        </small>
+                      </div>
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Planta Química</h5>
+                            <p class="card-text">Las plantas químicas son probablemente la segunda máquina que más te
+                                acompañe en tu fábrica.
+                                Como su nombre lo indica, producen items de naturaleza química, como baterías,
+                                lubricante,
+                                combustible, entre otros.
+                                Solo posee una variante. Tiene 2 entradas para fluidos atrás y 2 salidas de fluidos por
+                                delante, que pueden conectarse
+                                con tuberías.
+                            </p>
+                            <ul>
+                                <li>Vida: 300</li>
+                                <li>Vel. crafteo: 1</li>
+                                <li>Consumo: 210 kW.</li>
+                                <li>Polución: 4/m</li>
+                                <li>Espacio para módulos: 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/planta_quimica.jpg" class="img-fluid rounded-start"
+                            alt="Planta química" width="480" height ="480">
+                    </div>
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                                <a href="https://wiki.factorio.com/Chemical_plant">Planta química (inglés)</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/logistica.jpg" class="img-fluid rounded-start"
+                            alt="Cintas transportadoras, variantes y tuberías" width="480" height ="480">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Logística</h5>
+                            <p class="card-text">Las cintas transportadoras son la entidad principal que servira para
+                                mover
+                                tus productos de un lugar a otro, al menos, durante el principio del juego. Vienen en 3
+                                niveles y no consumen
+                                energía. También, tienen componentes como el divisor, que puede usarse para dividir o
+                                juntar
+                                2 cintas distintas y variantes subterraneas.
+                            </p>
+                            <p>Las tuberías son el único medio, a parte de vagones tanque y poner el fluido en barriles,
+                                de
+                                transportar fluidos
+                                de un lugar a otro. A medida que una tubería se extiende, pierde presión, por lo que son
+                                necesarios bombas eléctricas.
+                                Las tuberías solo tienen una variante subterranea y las bombas no poseen ninguna
+                                variante.
+                            </p>
+                            <ul>
+                                <li>Vida: 150 - 190</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Belt_transport_system">Cintas de transporte
+                                (inglés)</a>
+                            <a href="https://wiki.factorio.com/Fluid_system">Sistema de fluidos (inglés)</a>
+                        </small>
+                    </div>
+               
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Trenes</h5>
+                            <p class="card-text">
+                                Los trenes pueden transportar una gran cantidad de items y fluidos, en grandes
+                                distancias,
+                                su único inconventiente
+                                siendo que pueden resultar algo caros, y poner correctamente los rieles y señales puede
+                                ser
+                                algo complicado para un jugador
+                                nuevo. Un tren está compuesto por al menos una locomotora, y uno o más vagones, de
+                                fluidos o
+                                de carga. Las locomotoras se
+                                mueven más lento si se les carga muchos vagones aunque es posible poner más de una
+                                locomotora. Hay 2 señales, el semáforo y el
+                                semáforo en cadena. Los semáforos dividen los rieles en bloques, y si un tren está
+                                ocupando
+                                ese bloque, otro tren no podrá ingresar en ese bloque
+                                hasta que se desocupe. Los semáforos en cadena "leen" el status del siguiente bloque.
+                            </p>
+                            <p>
+                                También están las estaciones, que es donde un tren para y espera basado en condiciones
+                                configurables, por ejemplo de tener o no tener
+                                cierta cantidad de cargo. Las estaciones son usualmente el problema principal de los
+                                trenes,
+                                ya que son la parte más cara, requiriendo muchos
+                                insertadores y una logística considerable para cargar y descargar un tren rápidamente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/trenes.jpg" class="img-fluid rounded-start" alt="Elementos de un tren" width="480" height ="480">
+                    </div>
+
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Railway/es">Ferrocarril</a>
+
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/torretas.jpg" class="img-fluid rounded-start"
+                            alt="Torreta, torreta lanzallama, y torreta laser" width="480" height ="480">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Torretas</h5>
+                            <p class="card-text">
+                                Las torretas protegen a tu fábrica de los locales y también
+                                pueden servir como elementos ofensivos.
+                                Hay 3 tipos de torretas, la torreta común, lanzallamas y la láser. Su daño puede ser
+                                afectado por tecnologías
+                                relevantes y el tipo de munición que utilizen. Las torretas lanzallamas son geniales
+                                para defender, con
+                                mucho daño pero no solo pueden disparar en frente suyo.
+                                Las torretas láser sólo consumen energía, aunque cuando
+                                disparan consumen una grán cantidad de esta,
+                                asi que es necesario no excederse o podrías causar un apagón.
+                                Los stats para cada torreta, de la común, la laser y la lanzallamas son:
+                            </p>
+                            <ul>
+                                <li>Vida: 400, 1000, 1400</li>
+                                <li>Munición: munición estándar, penetrante, de uranio, energía, petróleo</li>
+                                <li>Consumo: 1.2 MW</li>
+                                <li>Daño base: 5, 8, 24 físico, 20 láser, 3 fuego en contacto, 100/s (llamas)</li>
+                                <li>Rango: 18, 24, 6 mínimo y 30 máximo, en un arco de 120°</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Gun_turret">Torreta (inglés)</a>
+                            <a href="https://wiki.factorio.com/Laser_turret">Torreta lasér (inglés)</a>
+                            <a href="https://wiki.factorio.com/Flamethrower_turret">Torreta lanzallamas
+                                (inglés)</a>
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Artillería</h5>
+                            <p class="card-text">
+                                Las artillerías son un elemento ofensivo definitivo. Pueden destruír bases enemigas en
+                                segundos, siempre y cuando
+                                tengas los recursos para dispararlas. Pueden ser disparadas manualmente con un rango
+                                mayor, o automaticamente,
+                                donde pueden servir como un elemento defensivo, evitando que las bases enemigas se
+                                acerquen a tu fábrica.
+                                Las artillerías también tiene una variante donde son montadas en vagones, formando parte
+                                de un tren.
+                            </p>
+                            <ul>
+                                <li>Vida: 2000</li>
+                                <li>Rango: 32 mínimo, 224 automático, 560 manual</li>
+                                <li>Velocidad de disparo: 0.3/s</li>
+                                <li>Daño (Ronda de artillería): 500 físico, 500 explosión</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/artilleria.jpg" class="img-fluid rounded-start"
+                            alt="Cuatro artillerías" width="480" height ="480">
+                    </div>
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Artillery_turret">Artillería (inglés)</a>
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- enemigos -->
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/biters.jpg" class="img-fluid rounded-start"
+                            alt="Biters: spawner, pequeño, mediano, grande y gigante" width="480" height ="480">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Biters</h5>
+                            <p class="card-text">
+                                Los Biters son los enemigos más comunes del juego, y probablemente el primer enemigo con
+                                el
+                                que se encuentren. Su ataque básico es morder en un rango muy corto.
+                                Sus bases son algo menos rojizas que la de los Splitters. Como todos los enemigos, sus
+                                bases consumen
+                                polución para aparecer un biter. Si están en una zona polucionada, los biters empezaran
+                                a producir unidades
+                                hasta que alcanzen un número, y luego irán hacia el origen de la polución en una horda.
+                            </p>
+                            <ul>
+                                <li>Vida: 15, 75, 375, 3000</li>
+                                <li>Daño: 3, 15, 30, 90 físico</li>
+                                <li>Polución requerida: 4, 20, 80, 400</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Enemies/es#Biters">Biters</a>
+
+                        </small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card mb-3" data-bs-theme="dark">
+                <div class=" row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Spitters</h5>
+                            <p class="card-text">
+                                Los spitters son el segundo tipo de enemigo que el jugador encontrará, normalmente
+                                aparecen después de un rato
+                                en el juego cuando los enemigos hayan evolucionado hasta cierto punto. Los spitters
+                                escupen ácido y estos projectiles
+                                pueden ir por encima de las paredes, haciendolos peligrosos para las torretas, siendo
+                                capaces de saltarse una línea de defensa.
+                                Sus projectiles también dejan un rastro de ácido en el suelo, relantizando al jugador y
+                                dañandolo.
+                                Ellos tambíen se suman a los ataques junto con los biters.
+                            </p>
+                            <ul>
+                                <li>Vida: 10, 50, 200, 1500</li>
+                                <li>Daño (contacto): 12, 24, 36, 60 ácido</li>
+                                <li>Daño (rastro de ácido): 7.2, 28.8, 130, 360, ácido/segundo</li>
+                                <li>Polución requerida: 4, 12, 30, 200</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="imagenes/mecanicas/spitters.jpg" class="img-fluid rounded-start"
+                            alt="Spitters: spawner, pequeño, mediano, grande y gigante" width="480" height ="480">
+                    </div>
+                    <div class="card-footer text-body-secondary text-center">
+                        <small>
+                            <a href="https://wiki.factorio.com/Enemies#Spitters">Spitters (inglés)</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="bg-dark container-fluid" id="pie-pagina">
+        <div class="d-flex justify-content-between">
+            <ul>
+                <li>
+                    <img src="imagenes/wube32.png" alt="Wube Software" width="32" height="32">
+                </li>
+                <li>
+                    <a href="https://forums.factorio.com/" target="_blank"><img src="imagenes/foros32.png" alt="Foros" width="32" height="32"></a>
+                </li>
+                <li>
+                    <a href="https://wiki.factorio.com/Main_Page/es" target="_blank"><img src="imagenes/wiki32.png"
+                        alt="Wiki" width="32" height="32"></a>
+                    </li>
+                    <li>
+                        <a href="https://steamcommunity.com/app/427520" target="_blank"><img src="imagenes/steam32.png"
+                            alt="Comunidad en steam" width="32" height="32"></a>
+                        </li>
+                        
+                    </ul>
+                    <span>
+                        <small>
+                            Copyright &copy; 2015 - 2023 Wube Software
+                        </small>
+                    </span>
+                </div>
+
+           <hr class="w-100 m-0">
+             <ul class="fs-6 d-flex justify-content-between flex-wrap">
+            <li>
+                Alumno: Emanuel Cifuentes
+            </li>
+            <li>
+                Escuela Da Vinci
+            </li>
+            <li>
+                Carrera: Analista de Sistemas
+            </li>
+            <li>
+                Materia: Programación Web I
+            </li>
+            <li>
+                Comisión: ACT1AV
+            </li>
+        </ul>
+        <p class="text-center">
+            Este sitio fue hecho con propósitos educativos. No está asociado a Wube Software en ninguna manera.
+        </p>
+        <p class="text-center">
+            This site was made with educative purposes only. It is not associated with Wube Software in any way.
+        </p>
+        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script>
+            let logos = gsap.utils.toArray('.logo-fondo')
+        logos.forEach((e) =>{
+            gsap.to(e, {rotate:900,duration: 1,
+            scrollTrigger: {
+            trigger: e,
+            scrub: 2,
+            }
+        })
+        })
+        </script>
+</body>
+
+</html>

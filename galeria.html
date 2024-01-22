@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorio - galeria</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree">
+    <link rel="icon" href="imagenes/logo32.png" type="image/png">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imagenes/logo32.png" alt="Logo" width="32" height="32">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Factorio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#comprar">Comprar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeria.html">Galería</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Guías
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="empenzando.html">Empezando a jugar</a></li>
+                            <li><a class="dropdown-item" href="mecanicas.html">Mecánicas y entidades</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="empenzando.html#guias-externas">Guías de la comunidad</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="acerca.html" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nosotros
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="acerca.html#acerca-de">Acerca de</a></li>
+                            <li><a class="dropdown-item" href="acerca.html#contacto">Contactanos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <header class="container-fluid w-75 panel-contenido">
+        <h1 class="mx-auto">
+            Galería
+        </h1>
+    </header>
+    <main class="container-fluid">
+        
+        <div class="modal mw-100" data-bs-theme="dark" tabindex="-1" id="modal-img">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Imágen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="cerrarModal(event)"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modal-img-element" class="mx-auto d-block" src="#" alt="#">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mx-auto" data-bs-dismiss="modal" onclick="cerrarModal(event)">Cerrar</button>
+                  </div>            
+            </div>
+        </div>
+        <div class="w-100 d-flex justify-content-center mb-n8">
+            <img src="imagenes/logo250.png" alt="logo" class="logo-fondo" width="250" height ="250">
+        </div>
+        <section class="panel-contenido">
+            <h2>Fotos</h2>
+            <div class="row">
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/art2.jpg" alt="Línea de ensamblaje"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/art3.jpg" alt="Ingeniero montando un cohete"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/base1.jpg" alt="Base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="106">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/base2.jpg" alt="Base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="200">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/base3.png" alt="Base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/beacon1.jpg" alt="Procesamiento de minerales"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="138">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/bus1.jpg" alt="Base de un jugador con cintas principales"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/compact.png" alt="Módulo de base compacta"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/intersection1.png" alt="Intersección de vías de ferrocarril"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="178">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/map1.png" alt="Mapa de la base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="133">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/map2.jpg" alt="Mapa de la base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/map3.png" alt="Mapa de la base de un jugador"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="194">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/reactors.jpg" alt="Reactores nucleares"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="135">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/spaghetti.png" alt="Cintas en una configuración espagueti"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/splash1.jpg" alt="Refinería de petróleo"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/trains1.jpeg" alt="Base con un sistema de trenes"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="125">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/art1.jpg" alt="El ingeniero y un biter tomando un páquete de ciencia"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/circuit1.jpg" alt="Un circuito que mide la energía en la red"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/wall1.jpg" alt="Una muralla defensiva"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="113">
+                </div>
+                <div class="col align-self-center">
+                    <img src="imagenes/galeria/thumb/central1.jpg" alt="Una central nuclear"
+                        class="borde-thumb fondo-oscuro p-2 rounded mx-auto d-block" onclick="mostrarImg(event)" width="200" height ="127">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark container-fluid" id="pie-pagina">
+        <div class="d-flex justify-content-between">
+            <ul>
+                <li>
+                    <img src="imagenes/wube32.png" alt="Wube Software" width="32" height="32">   
+                </li>
+                <li>
+                    <a href="https://forums.factorio.com/" target="_blank"><img src="imagenes/foros32.png" alt="Foros" width="32" height="32"></a>
+                </li>
+                <li>
+                    <a href="https://wiki.factorio.com/Main_Page/es" target="_blank"><img src="imagenes/wiki32.png"
+                        alt="Wiki" width="32" height="32"></a>
+                    </li>
+                    <li>
+                        <a href="https://steamcommunity.com/app/427520" target="_blank"><img src="imagenes/steam32.png"
+                            alt="Comunidad en steam" width="32" height="32"></a>
+                        </li>
+                        
+                    </ul>
+                    <span>
+                        <small>
+                            Copyright &copy; 2015 - 2023 Wube Software
+                        </small>
+                    </span>
+                </div>
+
+           <hr class="w-100 m-0">
+             <ul class="fs-6 d-flex justify-content-between flex-wrap">
+            <li>
+                Alumno: Emanuel Cifuentes
+            </li>
+            <li>
+                Escuela Da Vinci
+            </li>
+            <li>
+                Carrera: Analista de Sistemas
+            </li>
+            <li>
+                Materia: Programación Web I
+            </li>
+            <li>
+                Comisión: ACT1AV
+            </li>
+        </ul>
+        
+        <p class="text-center">
+            Este sitio fue hecho con propósitos educativos. No está asociado a Wube Software en ninguna manera.
+        </p>
+        <p class="text-center">
+            This site was made with educative purposes only. It is not associated with Wube Software in any way.
+        </p>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        let mostrarImg = function(event) {
+            let vw = window.innerWidth
+            let src = event.target.src
+            let img_src = src.match(/\/[A-Za-z0-9]*\.[A-Za-z]{3,4}/s)[0]
+            console.log(img_src)
+            if(vw <=1024){
+                open("./imagenes/galeria"+img_src)
+            }
+            else{
+                const modal = document.getElementById('modal-img')
+                const mostrar = document.getElementById("modal-img-element")
+                mostrar.src = "./imagenes/galeria"+img_src
+                mostrar.alt = event.target.alt
+                mostrar.style.maxWidth = "100%"
+                modal.style.display = "block"
+            }
+        }
+
+        let cerrarModal =function(event){
+            const modal = document.getElementById('modal-img')
+            modal.style.display = "none"
+        }
+
+        let logos = gsap.utils.toArray('.logo-fondo')
+        logos.forEach((e) =>{
+            gsap.to(e, {rotate:900,duration: 1,
+            scrollTrigger: {
+            trigger: e,
+            scrub: 2,
+            }
+        })
+        })
+
+    
+    </script>
+</body>
+
+</html>
